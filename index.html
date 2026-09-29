@@ -23,6 +23,9 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         header {
             background: var(--primary);
@@ -38,6 +41,9 @@
             max-width: 800px;
             margin: 30px auto;
             padding: 0 20px;
+            flex: 1; /* เพื่อดัน footer ลงไปด้านล่างสุด */
+            width: 100%;
+            box-sizing: border-box;
         }
         .question-card {
             background: white;
@@ -90,6 +96,25 @@
             font-weight: bold;
             color: #ffd166;
         }
+        
+        /* สไตล์สำหรับส่วนท้ายเว็บ (Footer) */
+        footer {
+            background: var(--primary);
+            color: var(--light);
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 40px;
+            border-top: 4px solid var(--secondary);
+        }
+        footer p {
+            margin: 5px 0;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        footer strong {
+            font-weight: 600;
+            font-size: 1.1em;
+        }
     </style>
 </head>
 <body>
@@ -100,8 +125,14 @@
 </header>
 
 <div class="container" id="quiz-container">
-    <!-- Questions will be injected here -->
+    <!-- คำถามจะถูกโหลดมาแสดงที่นี่ -->
 </div>
+
+<!-- ส่วนท้ายเว็บที่เพิ่มเข้ามาใหม่ -->
+<footer>
+    <p><strong>PIYAPAT B.</strong></p>
+    <p>@ 2026 PIYAPAT</p>
+</footer>
 
 <script>
     // รูปแบบข้อมูล: [ "คำถาม", indexข้อถูก(0-3), "ก", "ข", "ค", "ง" ]
